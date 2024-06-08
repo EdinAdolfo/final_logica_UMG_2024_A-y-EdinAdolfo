@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>examen</title>
+</head>
+<body>
+    <h1>Operaciones de HTML Y JavaScript</h1>
+    
+    <label for="input1">Input 1:</label>
+    <input type="number" id="input1"><br>
+
+    <label for="input2">Input 2:</label>
+    <input type="number" id="input2"><br>
+
+    <label for="input3">Input 3:</label>
+    <input type="number" id="input3"><br>
+    
+    <button id="boton1" onclick="ejecutarOperacion()">Ejecutar Operación</button>
+    <button id="boton2" onclick="ejecutarOperacionBoton2()">Ejecutar Operación 2</button>
+    <button id="boton3">Botón 3</button>
+    
+    <p id="resultado"></p>
+    <p id="resultado2"></p>
+    
+    <script>
+        function ejecutarOperacion() {
+            
+            const input1 = parseFloat(document.getElementById('input1').value);
+            const input2 = parseFloat(document.getElementById('input2').value);
+            const input3 = parseFloat(document.getElementById('input3').value);
+
+            
+            let resultado = '';
+            
+            
+            if (input1 < input3) {
+                
+                const suma = input1 + input2 + input3;
+                resultado = `Suma: ${input1} + ${input2} + ${input3} = ${suma}`;
+            } else if (input2 === 0) {
+                
+                const resta = Math.abs(input1 - input3);
+                resultado = `Resta: |${input1} - ${input3}| = ${resta}`;
+            } else if (input1 === input2) {
+                
+                const multiplicacion = input1 * input2 * input3;
+                resultado = `Multiplicación: ${input1} * ${input2} * ${input3} = ${multiplicacion}`;
+            } else {
+                resultado = 'No se cumplieron las condiciones para ninguna operación.';
+            }
+
+            
+            document.getElementById('resultado').innerText = resultado;
+        }
+
+        function ejecutarOperacionBoton2() {
+            
+            const input1 = parseFloat(document.getElementById('input1').value);
+            const input2 = parseFloat(document.getElementById('input2').value);
+            const input3 = parseFloat(document.getElementById('input3').value);
+
+            
+            let resultado2 = '';
+            
+    
+            const suma = input1 + input2 + input3;
+            if (suma > 10) {
+                
+                resultado2 = `Multiplicación repetida: `;
+                for (let i = 0; i < input3; i++) {
+                    const multiplicacion = input1 * input2;
+                    resultado2 += `${input1} * ${input2} = ${multiplicacion}\n`;
+                }
+            } else {
+                
+                resultado2 = `Suma repetida: `;
+                for (let i = 0; i < input3; i++) {
+                    const sumaRepetida = input1 + input2 + input3;
+                    resultado2 += `${input1} + ${input2} + ${input3} = ${sumaRepetida}\n`;
+                }
+            }
+
+        
+            document.getElementById('resultado2').innerText = resultado2;
+        }
+    </script>
+</body>
+</html>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
